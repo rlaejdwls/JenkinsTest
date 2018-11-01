@@ -20,10 +20,6 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 
-war {
-    archiveName "${rootProject.name}.war"
-}
-
 group = 'com.example'
 version = '0.0.1'
 sourceCompatibility = 1.8
@@ -65,4 +61,8 @@ dependencies {
     }
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+task doPack(type: War, dependsOn: []) {
+    archiveName "${rootProject.name}.war"
 }

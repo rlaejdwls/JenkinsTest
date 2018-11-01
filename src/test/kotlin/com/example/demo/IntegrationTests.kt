@@ -21,7 +21,7 @@ class IntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
     @Test fun `Assert blog page title, content and status code`() {
         val entity = restTemplate.getForEntity<String>("/")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
-        assertThat(entity.body).contains("<h1>Bloog</h1>")
+        assertThat(entity.body).contains("<h1>Blooog</h1>")
     }
     @Test fun `그럼 이걸 이렇게 한글로 써도 작동한다는 얘기?`() {
         assertThat(true).isTrue()

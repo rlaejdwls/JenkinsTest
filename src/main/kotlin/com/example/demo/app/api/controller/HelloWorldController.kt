@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class HelloWorldController {
     @RequestMapping("/hello") fun hello(@RequestParam(value = "name") name: String): String {
-        return "Welcome to $name World."
+        return "Welcome to $name World"
     }
 }

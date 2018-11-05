@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.common.util
 
 import org.commonmark.ext.autolink.AutolinkExtension
 import org.commonmark.parser.Parser

@@ -1,7 +1,7 @@
 package com.example.demo
 
-import com.example.demo.domain.TestUser
-import com.example.demo.domain.UserRepository
+import com.example.demo.app.api.entity.TestUser
+import com.example.demo.app.api.repository.UserRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

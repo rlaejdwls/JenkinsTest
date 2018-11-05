@@ -1,4 +1,4 @@
-package com.example.demo.domain
+package com.example.demo.app.api.entity
 
 import javax.persistence.Entity
 import javax.persistence.Id

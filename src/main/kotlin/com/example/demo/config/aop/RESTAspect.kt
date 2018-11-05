@@ -32,7 +32,7 @@ import java.io.StringWriter
     }
     @Around("execution(* com.example.*.app.api.controller.*.*(..))")
     fun doAppApiAround(joinPoint: ProceedingJoinPoint): Any? {
-        var result: Any? = null
+        var result: Any?
         try {
             result = joinPoint.proceed()
         } catch(t: Throwable) {

@@ -6,13 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
-import org.springframework.jndi.JndiObjectFactoryBean
-import javax.naming.NamingException
-
-
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages= ["com.example.demo"])
+@EnableJpaRepositories(basePackages= [
+    "com.example.demo.app.api.repository",
+    "com.example.demo.web.repository",
+    "com.example.demo.common.repository"])
 class DemoApplication {
     @Bean fun mustacheCompiler(loader: Mustache.TemplateLoader?): Mustache.Compiler =
             Mustache.compiler().escapeHTML(false).withLoader(loader)

@@ -1,7 +1,7 @@
 package com.example.demo
 
-import com.example.demo.app.api.entity.TestUser
-import com.example.demo.app.api.repository.UserRepository
+import com.example.demo.common.entity.User
+import com.example.demo.common.repository.UserRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -15,13 +15,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class RepositoriesTests(@Autowired val entityManager: TestEntityManager,
-                        @Autowired val userRepository: UserRepository) {
-    @Test fun `When findById then return TestUser`() {
-        val kotlin = TestUser(104, "Kotlin", "8", "JetBrains")
+                        @Autowired val repository: UserRepository) {
+    @Test fun `When findById then return User`() {
+        val kotlin = User(104, "Kotlin", "8", "JetBrains")
 //        entityManager.persist(kotlin)
 //        entityManager.flush()
 
-        val found = userRepository.findById(kotlin.id)
+        val found = repository.findById(kotlin.id)
         assertThat(found.get()).isEqualTo(kotlin)
     }
 }

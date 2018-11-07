@@ -23,7 +23,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 
 group = 'com.example'
-version = '0.0.5'
+version = '0.0.6'
 sourceCompatibility = 1.8
 compileKotlin {
     kotlinOptions {

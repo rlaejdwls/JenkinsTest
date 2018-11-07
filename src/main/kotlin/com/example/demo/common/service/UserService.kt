@@ -13,5 +13,8 @@ import org.springframework.stereotype.Service
 
     fun selectUser(id: Int): User = repository.findById(id).get()
     fun selectUserList(ids: List<Int>): MutableIterable<User> = repository.findAllById(ids)
-    fun selectUserPage(page: Int, size: Int): Page<User> = repository.findAll(PageRequest.of(page, size, Sort.by("id")))
+    fun selectUserForPagingUsingBinding(page: Int, size: Int): Page<User> = repository.findAll(PageRequest.of(page, size, Sort.by("id")))
+    fun selectUserForPagingUsingQuery(page: Int, size: Int): Iterable<User> = repository.selectUserForPaging(page * size, size)
+    fun selectUserForPagingUsingEntityManagerNative(page: Int, size: Int): Iterable<User> = repository.selectUserForPagingUsingEntityManagerNativeSyntax(page, size)
+    fun selectUserForPagingUsingEntityManagerJpa(page: Int, size: Int): Iterable<User> = repository.selectUserForPagingUsingEntityManagerJpaSyntax(page, size)
 }

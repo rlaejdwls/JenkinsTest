@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*
              @RequestParam(value="page", defaultValue="0") page: Int,
              @RequestParam(value="size", defaultValue= "10") size: Int): String {
         model["title"] = "Blog"
-        model["users"] = service.selectUserPage(page, size)
+        model["users"] = service.selectUserForPagingUsingEntityManagerJpa(page, size)
         return "blog"
     }
 }
